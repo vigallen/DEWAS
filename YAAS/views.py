@@ -3,7 +3,7 @@ from datetime import datetime
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse, Http404, HttpResponseNotAllowed, HttpResponseForbidden
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext, loader, Context
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -79,4 +79,4 @@ def change_email(request):
                 form = ChangeEmail(request.POST)
     else:
         form = ChangeEmail(request.POST)
-    return render_to_response('email.html', {'form': form}, context_instance=RequestContext(request))
+    return render(request, 'email.html', {'form': form})
