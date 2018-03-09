@@ -1,10 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from django.contrib.auth import login, authenticate
-from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse, Http404, HttpResponseNotAllowed, HttpResponseForbidden
-from django.shortcuts import render, get_object_or_404
-from django.template import RequestContext, loader, Context
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
@@ -80,3 +77,6 @@ def change_email(request):
     else:
         form = ChangeEmail(request.POST)
     return render(request, 'email.html', {'form': form})
+
+def auctions(request):
+    return render(request, 'auctions.html', {'form': form})

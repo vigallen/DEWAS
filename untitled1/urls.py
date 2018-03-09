@@ -27,4 +27,5 @@ urlpatterns = [
     #url(r'^edituser/$', yaas_views.edituser, name='edituser'),
     url(r'^password/$', yaas_views.change_password, name = 'change_password'),
     url(r'^email/$', yaas_views.change_email, name = 'change_email'),
+    url(r'^Auctions/$', yaas_views.auctions, name = 'auctions')
 ]
